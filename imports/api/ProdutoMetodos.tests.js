@@ -5,7 +5,7 @@ import { mockMethodCall } from 'meteor/quave:testing';
 import { assert, expect } from 'chai';
 import '/imports/api/ProdutoMetodos';
 
-import {eLimiteDeProduto, eLimiteDePreco, eValorMonetario} from './ProdutoMetodos';
+import {eLimiteDeProduto, eLimiteDePreco, eValorMonetario} from './FuncProdutos';
 
 if (Meteor.isServer) {
   describe('Produtos', () => {
@@ -363,9 +363,12 @@ if (Meteor.isServer) {
       assert.equal(eLimiteDeProduto(10), 1);
     });
 
+
     it('Limite Superior', () => {
-        assert.throws( () => eLimiteDeProduto(11), /Quantidade de produtos passou do limite./);
-    });
+      expect( () => {
+        eLimiteDeProduto(36);
+      }).throw("Quantidade de produtos passou do limite");
+    })
 
   });
 
@@ -382,9 +385,11 @@ if (Meteor.isServer) {
       assert.equal(eLimiteDePreco(35.99), 1);
     });
 
-    it('Limite Superior - Preço', () => {
-        assert.throws( () => eLimiteDePreco(36), /Produto com preço além do limite./);
-    });
+    it('Limite Superior', () => {
+      expect( () => {
+        eLimiteDePreco(36);
+      }).throw("Produto com preço além do limite");
+    })
 
   });
 
