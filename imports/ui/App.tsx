@@ -47,7 +47,7 @@ export const App = () => {
           sx={{
             display: 'flex',
             width: '80%',
-            height: '80%',
+            height: '95vh',
             background: 'white',
             boxShadow: "0px 2px 14px rgba(0, 0, 0, 0.25)",
             padding: '3rem 5rem',
