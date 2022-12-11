@@ -146,6 +146,7 @@ describe('Teste End-to-End', () => {
     cy.get('[data-id=mais-caro]').should('contain.text', 'R$ 10.5')
 
     cy.get('[data-id=remove-produto]').click({multiple: true, force: true}).then
+    cy.wait(500)
     cy.get('[data-id=remove-produto]').click().then
     cy.get('[data-id=valor-total]').should('contain.text', 'R$ 0')
     
@@ -213,6 +214,7 @@ describe('Teste End-to-End', () => {
 
     //Remover produtos
     cy.get('[data-id=remove-produto]').click({multiple: true, force: true}).then
+    cy.wait(500)
     cy.get('[data-id=remove-produto]').click().then
     cy.get('[data-id=valor-total]').should('contain.text', 'R$ 0')
     
@@ -317,6 +319,8 @@ describe('Teste End-to-End', () => {
 
     //Remover produtos
     cy.get('[data-id=remove-produto]').click({multiple: true, force: true}).then
+    cy.get('[data-id=remove-produto]').click({multiple: true, force: true}).then
+    cy.wait(500)
     cy.get('[data-id=remove-produto]').click().then
     cy.get('[data-id=valor-total]').should('contain.text', 'R$ 0')
     
