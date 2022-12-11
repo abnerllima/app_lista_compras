@@ -144,14 +144,8 @@ describe('Teste End-to-End', () => {
 
     //Teste produto mais caro
     cy.get('[data-id=mais-caro]').should('contain.text', 'R$ 10.5')
-
-    cy.get('[data-id=remove-produto]').click({multiple: true, force: true}).then
-    cy.wait(500)
-    cy.get('[data-id=remove-produto]').click().then
-    cy.get('[data-id=valor-total]').should('contain.text', 'R$ 0')
-    
-    
-       
+  
+           
   })
 
 
@@ -173,52 +167,8 @@ describe('Teste End-to-End', () => {
       cy.wait(2000)
     })
 
-
-    //Adiciona produto 1
-    cy.get('[data-id=produto]').within(() => {
-      cy.get('input').type('Produto 1')
-    })
-
-    cy.get('[data-id=quantidade]').within(() => {
-      cy.get('input').type('2')
-    })
-
-    cy.get('[data-id=preco]').within(() => {
-      cy.get('input').type('2.0')
-    })
-
-    cy.get('[data-id= button-add]').within(() => {
-      cy.contains('Adicionar').click().then
-    })
-
-    //Adiciona produto 2
-    cy.get('[data-id=produto]').within(() => {
-      cy.get('input').type('Produto 2')
-    })
-
-    cy.get('[data-id=quantidade]').within(() => {
-      cy.get('input').type('2')
-    })
-
-    cy.get('[data-id=preco]').within(() => {
-      cy.get('input').type('10.50')
-    })
-
-    cy.get('[data-id= button-add]').within(() => {
-      cy.contains('Adicionar').click().then
-    })
-
-
     //Teste produto mais barato
     cy.get('[data-id=mais-barato]').should('contain.text', 'R$ 2')
-
-    //Remover produtos
-    cy.get('[data-id=remove-produto]').click({multiple: true, force: true}).then
-    cy.wait(500)
-    cy.get('[data-id=remove-produto]').click().then
-    cy.get('[data-id=valor-total]').should('contain.text', 'R$ 0')
-    
-    
        
   })
   
@@ -244,40 +194,6 @@ describe('Teste End-to-End', () => {
     })
 
 
-    //Adiciona produto 1
-    cy.get('[data-id=produto]').within(() => {
-      cy.get('input').type('Produto 1')
-    })
-
-    cy.get('[data-id=quantidade]').within(() => {
-      cy.get('input').type('2')
-    })
-
-    cy.get('[data-id=preco]').within(() => {
-      cy.get('input').type('2.0')
-    })
-
-    cy.get('[data-id= button-add]').within(() => {
-      cy.contains('Adicionar').click().then
-    })
-
-    //Adiciona produto 2
-    cy.get('[data-id=produto]').within(() => {
-      cy.get('input').type('Produto 2')
-    })
-
-    cy.get('[data-id=quantidade]').within(() => {
-      cy.get('input').type('2')
-    })
-
-    cy.get('[data-id=preco]').within(() => {
-      cy.get('input').type('10.50')
-    })
-
-    cy.get('[data-id= button-add]').within(() => {
-      cy.contains('Adicionar').click().then
-    })
-
     //Adiciona produto 3
     cy.get('[data-id=produto]').within(() => {
       cy.get('input').type('Produto 3')
@@ -295,22 +211,22 @@ describe('Teste End-to-End', () => {
       cy.contains('Adicionar').click().then
     })
   
-       //Adiciona produto 4
-       cy.get('[data-id=produto]').within(() => {
-        cy.get('input').type('Produto 4')
-      })
-  
-      cy.get('[data-id=quantidade]').within(() => {
-        cy.get('input').type('1')
-      })
-  
-      cy.get('[data-id=preco]').within(() => {
-        cy.get('input').type('2')
-      })
-  
-      cy.get('[data-id= button-add]').within(() => {
-        cy.contains('Adicionar').click().then
-      })
+    //Adiciona produto 4
+    cy.get('[data-id=produto]').within(() => {
+      cy.get('input').type('Produto 4')
+    })
+
+    cy.get('[data-id=quantidade]').within(() => {
+      cy.get('input').type('1')
+    })
+
+    cy.get('[data-id=preco]').within(() => {
+      cy.get('input').type('2')
+    })
+
+    cy.get('[data-id= button-add]').within(() => {
+      cy.contains('Adicionar').click().then
+    })
   
 
 
@@ -321,7 +237,6 @@ describe('Teste End-to-End', () => {
     cy.get('[data-id=remove-produto]').click({multiple: true, force: true}).then
     cy.get('[data-id=remove-produto]').click({multiple: true, force: true}).then
     cy.wait(500)
-    cy.get('[data-id=remove-produto]').click().then
     cy.get('[data-id=valor-total]').should('contain.text', 'R$ 0')
     
        
